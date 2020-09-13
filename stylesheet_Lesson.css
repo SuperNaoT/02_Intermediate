@@ -1,0 +1,152 @@
+/* */
+/* ポルシェ画像サイズ指定。 */
+.porsche {
+    height: 324px;
+    width:  500px;
+}
+
+.porsche2 {
+    height: 162px;
+    width:  250px;
+}
+
+.porsche_mini {
+    height: 81px;
+    width:  125px;
+}
+
+.button2 {
+    height: 162px;
+    width:  250px;
+    float: left;
+}
+
+/*
+ * ###########################################
+ * 知識取り纏め用HTMLファイル向け、書式設定。
+ * ※　Intemediate_CSS/HTMLファイル用
+ * ###########################################
+ */
+/*
+ * イメージ表示関連。
+ */
+.bg-img {
+    height: 100px;
+    background-image: url(http://ntad_css.localhost/H300_porsche.jpg);
+    background-size: cover;
+}
+.bg-img_org {
+    height: 100px;
+    background-image: url(http://ntad_css.localhost/H300_porsche.jpg);
+}
+
+.bg-img h1 {
+    color: #fff;
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+}
+.bg-img_org h1, P {
+    color: #fff;
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+}
+.bg-string {
+    color: #fff;
+    opacity: 0.5;
+    letter-spacing: 10px;
+}
+
+.btn {
+    padding: 8px 24px;
+    background-color: #239b76;
+    opacity: 0.7;
+    border-radius: 10px;
+}
+.btn:hover {
+    opacity: 1;
+    /*
+    margin: 20px 0;
+    background-color: blueviolet
+    */
+}
+
+.btn_ref {
+    color: blue; 
+}
+
+/* p { color: black; } */
+
+.trasP_bg-img {
+    background-image: url(http://ntad_css.localhost/H300_porsche.jpg);
+    width: 300px;
+    height: 220px;
+    padding: 15px;
+    margin-left: 130px;
+    border-style: solid;
+}
+.transP_box1 {
+    background-color: rgb(255, 147, 30, 0.5);
+    border-style: solid;
+    width: 200px;
+    font-weight: bold;
+}
+.transP_box2 {
+    background-color: #ff931e;
+    border-style: solid;
+    width: 200px;
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+/*
+ * TRANSITIONによる、表示状態を変更させる。
+ */
+.div_tran {
+    transition: all 1s;
+    background-color: blue;
+}
+.div-tran:hover {
+    background-color: blueviolet;
+}
+
+
+/* */
+/* ヘッダー文字列、属性指定 */
+/* */
+p {
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+    color: black;
+}
+
+h2 {
+    color: #0000ff;
+    text-decoration-line: underline;
+}
+h3 {
+    color: #ff0000;
+    text-decoration-line: underline;
+}
+h4 {
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+}
+
+/*
+ * 文字列表示位置指定。
+ */
+.str-pos1 { background-color: yellow; text-align: left; }
+.str-pos2 { background-color: #239b76; text-align: center; }
+.str-pos3 { background-color: yellowgreen; text-align: right; }
+
+/*
+ * 文字列の行間・行の高さ指定。
+ */
+.ln-ht1 { line-height: 100%; background-color: yellow;  }
+.ln-ht2 { line-height: 200%; background-color: #239b76; }
+.ln-ht3 { line-height: 300%; background-color: yellowgreen; }
+
+.bk-ht p {
+    line-height: 500%;
+    background-color: Pink;
+}

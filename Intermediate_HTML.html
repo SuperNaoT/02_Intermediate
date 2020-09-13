@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet_lesson.css">
+        <script src="https://kit.fontawesome.com/2a411c1cdb.js" crossorigin="anonymous"></script>
+        <title>HTML 中級編</title>
+    </head>
+    <body>
+        <i class="fas fa-thumbs-up fa-5x"></i>
+<!-- HTMLに触れてみよう！-->
+        <h2>　★★★　Landing Page の作成！　★★★</h2>
+        　■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■<br><br>
+        <h3>　■　文字列の一部分に特例スタイルを指定する為のタグ！【&lt;span&gt; &lt;/span&gt;】<br></h3>
+        　　　　【参照：<a href="https://prog-8.com/html/study/1/18#/59" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/1/18#/59</a>】<br>
+        　　　　　<strong>※　表示文字列の一部、例えば「Progate」だけを赤文字に。</strong><br><br>
+        　　　　　《HTML記載例》<br>
+        　　　　　　　　&lt;div class="copy-container"&gt;　私は「<strong>&lt;span&gt;</strong>Progate<strong>&lt;/span&gt;</strong>」にてHTML/CSSを勉強しています。　&lt;/div&gt;<br>
+        　　　　　《CSS記載例》<br>
+        　　　　　　　　<strong>.copy-container span {　color: #ff0000;　}</strong><br>
+        　　　　【実行結果・・・】<br>
+        <div class="copy-container"><strong>　　　　　　　　私は「<span>Progate</span>」にてHTML/CSSを勉強しています。</strong><br>
+                        
+        <h3>　■　インライン要素・インラインブロック要素・ブロック要素！【違いについて】<br></h3>
+        　　　　【参照：<a href="https://prog-8.com/html/study/2/5#/11" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/5#/11</a>】<br>
+        　　　　　<a href="https://www.tagindex.com/html_tag/elements/inline.html">※《HTML インライン要素一覧》</a><br>
+        　　　　　<a href="https://www.tagindex.com/html_tag/elements/block.html">※《HTML ブロック要素　一覧》</a><br>
+        　　　　　<img src="http://ntad_css.localhost/中級編/インライン要素_ブロック要素.JPG" width="587px" heigth="208px"><br>
+        　　　　<strong>※　インライン・ブロック要素に、<font color="red">display (CSS)</font> 属性を指定する事により、<br>
+        　　　　　　それぞれ要素を「インライン・インラインブロック・ブロック要素」に変更できる。<br>
+        　　　　　　・・・「width/height, margin/padding」を指定出る様に成る。</strong><br>
+        　　　　　《CSS記載例》<br>
+        　　　　　　　　<strong>.inlineElement {<br>
+        　　　　　　　　　　display: inline;　　　　 ・・・インライン要素扱いと成る。<br>
+        　　　　　　　　　　display: inline-block;　・・・インラインブロック要素扱いとなる。<br>
+        　　　　　　　　　　display: block;　　　　 ・・・ブロック要素扱いとなる。<br>
+        　　　　　　　　}</strong><br>
+        　　　　　<img src="http://ntad_css.localhost/中級編/インライン要素_ブロック要素_2.JPG" width="587px" heigth="208px"><br>
+
+        <h3>　■　複数クラスを指定する。【class="class_Name1 class_Name2"】<br></h3>
+        　　　　【参照：<a href="https://prog-8.com/html/study/2/5#/13" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/5#/13</a>】<br>
+        　　　　　<strong>※　クラス指定のダブルクオート内に、スペースで区切ったクラス名を列記。</strong><br><br>
+        　　　　　《HTML記載例》<br>
+        　　　　　　　　&lt;div <strong><font color="red">class="class_Name1 class_Name2"</font></strong>&gt;・・・&lt;/div&gt;<br>
+    
+
+        <br><br><br>
+    </body>
+</html>

@@ -1,0 +1,267 @@
+/*
+ * ###########################################
+ * ランディングページファイル向け、書式設定。
+ * ※　Intemediate_Structureファイル用
+ * ###########################################
+ */
+body {
+    font-family: "Hiragino Kaku Gothic ProN";
+    border-style: solid;
+}
+/* */
+/* ヘッダー文字列、属性指定 *
+h1 {
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+}
+******/
+
+/*
+ *
+ * For Intermediate_Structure.html.
+ *
+ */
+/*******************************
+  Style settings for HEADER!
+********************************/
+header {
+    height: 65px;
+    background-color: rgba(34, 49, 52, 0.9);
+/*    border-style: solid; */
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+    background-color:rgba(255, 255, 255, 0.3);
+}
+.header-right:hover {
+    background-color:rgba(255, 255, 255, 0.5);
+}
+
+.header-right a {
+    display: block;
+    line-height: 65px;
+    padding: 0 20px;
+    color: white;
+}
+
+.logo {
+    width: 124px;
+    margin-top: 20px;
+/*    border-style: solid; */
+}
+
+.login {
+    color: white;
+}
+
+/*******************************
+  Style settings for MAIN!
+********************************/
+/*
+ *　メイン部分内、トップ部分設定。
+ *
+ *　トップ部分を構成する、一番外側の１包み。
+ *　※ページ全体での位置を決める為の枠組み。
+ *　
+ */
+ /***********************************************************/
+ /***********************************************************/
+ /* paddingの指定は、【上、左右、下】 */
+.top-wrapper {
+    padding: 180px 0px 180px 0px;
+    background-image: url(https://prog-8.com/images/html/advanced/top.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+/* For local environment. */
+.top-wrapper h1, P {
+    margin-block-start: 0px;
+    margin-block-end:   0px;
+}
+
+/*
+ * 【ページ全体共通】のサイズと表示位置決めの為の枠組。
+ * 　先ずは、トップ部分内での表示位置決めの為の枠組。
+ */
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* トップ部分内、ヘッダー文字列属性指定。 */
+.top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 5px;
+}
+
+/* トップ部分内、一般文字列属性指定。 */
+.top-wrapper p {
+    opacity: 0.7;
+}
+
+.btn-wrapper {
+    margin: 20px 0;
+}
+
+.btn-wrapper p {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 24px;
+    color: #fff;
+    opacity: 0.7;
+    border-radius: 4px;
+    box-shadow: 10px 10px #000000;
+}
+
+/* Display change at CURSOR ON. */
+.btn:hover {
+    opacity: 1;
+}
+
+/* Botton : New registor. */
+.signup {
+    background-color: #239b76; 
+}
+
+/* Botton : Login on Facebook accont. */
+.facebook {
+    background-color: #3b5998;
+    margin-right: 10px; 
+}
+
+/* Botton : Login on Twitter account. */
+.twitter {
+    background-color: #55acee; 
+}
+
+/* Setting for ICONs. */
+.fa {
+    margin-right: 5px;
+}
+.fab {
+    margin-right: 5px;
+}
+
+/*
+ *　メイン部分内、レッスン案内部分設定。
+ */
+/***********************************/
+/***********************************************************/
+/***********************************************************/
+
+/*
+ *　レッスン案内・メッセージ案内表示に於ける、ヘッダー部の共通表示設定。
+ */
+/* Common heading message! */
+.heading {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    color: #5f5d60;
+}
+
+/* Using lesson-wrapper. */
+.heading h2 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end:   0px;    
+}
+
+/* Using lesson-wrapper and message-wrapper. */
+.heading h3 {
+    font-weight: normal;
+    margin-block-start: 0px;
+    margin-block-end:   0px;    
+}
+
+/*
+ *　レッスン部分を構成する、一番外側の１包み。
+ *　※ページ全体での位置を決める為の枠組み。
+ */　
+/***********************************/
+.lesson-wrapper {
+    height: 500px;
+    padding-bottom: 80px;
+/*    background-color: #f7f7f7; */
+    background-color: red;
+    text-align: center;
+}
+
+/*
+ *　個別言語レッスンに関する設定。
+ *　構成：アイコン、アイコン内タイトル、説明文。
+ */
+.lesson {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+/* アイコン表示の為の設定情報。 */
+/* アイコン表示の為の外枠。　　 */
+.lesson-icon {
+    position: relative;
+}
+
+/* アイコン内タイトル表示。 */
+.lesson-icon p {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    color: white;
+}
+
+/* 説明文表示。 */
+.txt-contents {
+    width: 80%;
+    display: inline-block;
+    margin: 20px;
+    font-size: 12px;
+    color: #b3aeb5;
+/*    border-style: dashed; */
+}
+
+/*
+ *　メイン部分内、メッセージ案内部分設定。
+ *
+ *　開発参加促進メッセージに関する設定。
+ *　構成：開発促進メッセージ文、開発開始メッセージボタン。
+ */
+/***********************************************************/
+/***********************************************************/
+/*　メッセージ部分を構成する、一番外側の１包み。
+ *　※ページ全体での位置を決める為の枠組み。
+ */
+/***********************************/
+.message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+    cursor: pointer;
+    box-shadow: 10px 10px #1a7940;
+}
+.message:active {
+    box-shadow: none;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+  
+/*******************************
+  Style settings for FOOTER!
+********************************/

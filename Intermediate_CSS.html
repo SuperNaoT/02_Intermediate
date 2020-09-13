@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="stylesheet_Lesson.css" type="text/css">
+        <script src="https://kit.fontawesome.com/2a411c1cdb.js" crossorigin="anonymous"></script>
+        <title>CSS 中級編</title>
+    </head>
+    <body>
+    <i class="fas fa-thumbs-up fa-5x"></i>
+
+<!-- CSSに触れてみよう！-->
+    <h2>　★★★　Landing Page の作成！　★★★</h2>
+    　■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■<br>
+    <div class="section-menu">
+        <a href="#section-text">■　文字表示関連</a><br>
+        <a href="#section-image">■　画像表示関連</a><br>
+        <a href="#section-button">■　ボタン表示関連</a><br>
+        <a href="#section-mouse">■　マウス表示関連</a><br>
+        <a href="#section-individualDSP">■　個別要素、画面サイズ比率表示関連</a><br>
+        <a href="#section-responsive">■　レスポンシブデザイン関連</a><br>
+    </div>
+<style type="text/css">
+    .section-menu { margin: 0 50px; }
+</style>
+    　■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2>※　文字の表示制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+    <h3>　■　文字間隔の調整。【letter-spacing: ?px;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/4#/9" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/4#/9</a>】<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.bg-string {<br>
+    　　　　　　　　　　　　<strong><font color="red">letter-spacing: 10px;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　　　<div class="bg-img_org">
+    　　　　　　　　　　    <h1 class="bg-string">　　　　　　　　　　※ 背景画像表示！</h1>    
+    　　　　　　　　　　</div>
+
+    <h3>　■　行間・行の高さを指定する。【line-height: ?px;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/10#/29" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/10#/29</a>】<br>
+　　　　　<strong>　※「line-height」にて指定すると、対象文字列はその高さの中心に配置される。</strong><br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;p class="ln-ht1"&gt;行間・行の高さ：100%　&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="ln-ht2"&gt;行間・行の高さ：150%　&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="ln-ht3"&gt;行間・行の高さ：200%　&lt;/p&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.ln-ht1 {　<strong><font color="red">line-height: 100%;</font></strong>　}<br>
+    　　　　　　　　　　.ln-ht2 {　<strong><font color="red">line-height: 150%;</font></strong>　}<br>
+    　　　　　　　　　　.ln-ht3 {　<strong><font color="red">line-height: 200%;</font></strong>　}<br>
+    　　　　【実行結果・・・】
+                    <p class="ln-ht1">行間・行の高さ： 100%　</p>
+                    <p class="ln-ht2">行間・行の高さ： 200%　</p>
+                    <p class="ln-ht3">行間・行の高さ： 300%　</p>
+                    <div class="bk-ht">
+                        <p>行間・行の高さ： 600%　</p>
+                    </div>
+
+    <h3>　■　文字列の表示位置の変更。【text-align: ?;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/6#/17" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/6#/17</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;p class="str-pos1"&gt;文字列表示位置：左（LEFT）&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="str-pos2"&gt;文字列表示位置：中心（CENTER）&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="str-pos3"&gt;文字列表示位置：右（RIGHT）&lt;/p&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.str_pos1 {　<strong><font color="red">text-align: left;</font></strong>　}<br>
+    　　　　　　　　　　.str_pos2 {　<strong><font color="red">text-align: center;</font></strong>　}<br>
+    　　　　　　　　　　.str_pos3 {　<strong><font color="red">text-align: right;</font></strong>　}<br>
+    　　　　【実行結果・・・】
+        <div>
+            <p class="str-pos1">【文字列表示位置：左（LEFT）】</a><br>
+            <p class="str-pos2">【文字列表示位置：中心（CENTER）】</a><br>
+            <p class="str-pos3">【文字列表示位置：右（RIGHT）】</a><br>
+        </div>
+
+    <h3>　■　文字の太さを指定する。【font-weight: bormal/bold;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/11#/33" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/11#/33</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;p class="str-pos1"&gt;文字列表示位置：左（LEFT）&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="str-pos2"&gt;文字列表示位置：中心（CENTER）&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;p class="str-pos3"&gt;文字列表示位置：右（RIGHT）&lt;/p&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.chr_line1 {　<strong><font color="red">font-weight: normal;</font></strong>　}<br>
+    　　　　　　　　　　.chr_line2 {　<strong><font color="red">font-weight: bold;</font></strong>　}<br>
+    　　　　【実行結果・・・】
+<style type="text/css">
+    .chr_line1 { font-weight:normal;}
+    .chr_line2 { font-weight:bold;}
+</style>
+            <div>
+                <p class="chr_line1">【font-weight : normal】</a><br>
+                <p class="chr_line2">【font-weight : bold】</a><br>
+            </div>
+<br><br>
+/***************************************************/<br>
+/***************************************************/
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2 id="section-image">※　画像表示制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                 
+    <h3>　■　特定の要素を、スクロールされても固定位置に表示させる為には・・・【position: fixed;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/18#/51" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/18#/51</a>】<br>
+    　　　　　<strong>　※　画像或いはヘッダー部等を、画面上に固定表示させる。<br>
+    　　　　　　　　<font color="red">position:fixed;</font>と一緒に、<font color="red">TOP・LEFT・RIGHT・BOTTOM</font>により表示位置を指定すると、<br>
+    　　　　　　　　画面をスクロールしてもその位置に固定表示される。</strong><br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;img class="fixedImg" src="http://ntad_css.localhost/H300_porsche.jpg"&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.fixedImg {<br>
+    　　　　　　　　　　　　<strong><font color="red">position: fixed;<br>
+    　　　　　　　　　　　　top: 200px;<br>
+    　　　　　　　　　　　　left: 700px;<br></font></strong>
+    　　　　　　　　　　　　opacity: 0.5;<br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】<br>
+               <a href="#"><img class="fixedImg" src="http://ntad_css.localhost/H300_porsche.jpg"></a>
+    
+<style type="text/css">
+    .fixedImg {
+        position: fixed;
+        z-index: 10;
+        top: 200px;
+        left: 700px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .fixedImg1 {
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        left: 0px;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+</style>
+    
+    <h3>　■　固定表示させた際の、重なりの優先順位付け・・・【<strong><font color="red">z-index</font></strong>】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/18#/53" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/18#/53</a>】<br>
+    　　　　　<strong>　※　【z-index】は、必ず【postiotion: fixed;】と併用する。<br>
+    　　　　　　　　　値が大きいほど、表示位置は上に来る（例：z-index: 1; ～ z-index: 10;）。</strong>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;img class="fixedImg1" src="http://ntad_css.localhost/porsche_1.jpg"&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.fixedImg1 {<br>
+    　　　　　　　　　　　　<strong><font color="red">position: fixed;<br>
+    　　　　　　　　　　　　z-index: 1;</font></strong><br>
+    　　　　　　　　　　　　top: 0px;<br>
+    　　　　　　　　　　　　left: 0px;<br>
+    　　　　　　　　　　　　opacity: 0.5;<br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】<br>
+            <img class="fixedImg1" src="http://ntad_css.localhost/porsche_1.jpg">
+    
+    <h3>　■　区分けした画面構成に、背景画像を割り当てる。【background-image: url(...);】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/3#/4" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/3#/4</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="bg-img"&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.bg-img {<br>
+    　　　　　　　　　　　　<strong>background-image: url(http://ntad_css.localhost/H300_porsche.jpg);</strong><br>
+    　　　　　　　　　　　　<strong>background-size: <font color="red">cover</font>;</strong>　※ １枚の画像で表示範囲を埋め尽くす（サイズ小の時の繰り返し表示を避ける）。<br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　　　<div class="bg-img">
+    　　　　　　　　　　    <h1>　　※ 背景画像表示！</h1>    
+    　　　　　　　　　　</div>
+    　　　　　　　　　　<div class="bg-img_org">
+    　　　　　　　　　　    <h1>　　※ 背景画像、繰り返し表示（COVER属性無し）！</h1>    
+    　　　　　　　　　　</div>
+
+    <h3>　■　要素を透過させ背景を透かせる。【opacity: 1/不透明 (0.0/透明);】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/4#/8" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/4#/8</a>】<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.bg-string {<br>
+    　　　　　　　　　　　　<strong><font color="red">opacity: 0.5;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　　　<div class="bg-img_org">
+    　　　　　　　　　　    <h1 class="bg-string">　　　　　　　　　　※ 背景画像表示！</h1>
+    　　　　　　　　　　</div>
+
+    <h3>　■　要素を透過させ背景を透かせる、けど、背景だけを透過し、文字要素等は透過させない。【rgba指定方法】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/8#/25" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/8#/25</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="transP_bg-img"&gt;<br>
+    　　　　　　　　　　　　&lt;div class="<strong>transP_box1</strong>"&gt;<br>
+    　　　　　　　　　　　　　　&lt;p&gt;【透ける枠付き文字列１】&lt;/p&gt;
+    　　　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　　　　　　　　&lt;div class="<strong>transP_box2</strong>"&gt;<br>
+    　　　　　　　　　　　　　　&lt;p&gt;【透ける枠付き文字列２】&lt;/p&gt;
+    　　　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　<strong>※　文字要素は、透過せずに背景だけを透過させる。</strong><br>
+    　　　　　　　　　　<strong>.transP_box1</strong> {<br>
+    　　　　　　　　　　　　<strong>backgroud-color: rgb(255, 147, 30, <font color="red">0.5</font>);</strong><br>
+    　　　　　　　　　　　　order-style: solid;<br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　<strong>※　文字要素も背景も、全て透過させる。</strong><br>
+    　　　　　　　　　　<strong>.transP_box2</strong> {<br>
+    　　　　　　　　　　　　backgroud-color: #ff931e;<br>
+    　　　　　　　　　　　　order-style: solid;<br>
+    　　　　　　　　　　　　width: 200px;<br>
+    　　　　　　　　　　　　<strong><font color="red">opacity: 0.5;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　.trasP_bg-img {<br>
+    　　　　　　　　　　　　background-image: url(http://ntad_css.localhost/H300_porsche.jpg);<br>
+    　　　　　　　　　　　　width: 300px;<br>
+    　　　　　　　　　　　　height: 220px;<br>
+    　　　　　　　　　　　　padding: 15px;<br>
+    　　　　　　　　　　　　margin-left: 130px;<br>
+    　　　　　　　　　　　　border-style: solid;<br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+ <!--       <div class="transP_wrapper"> -->
+            <div class="trasP_bg-img">
+    　　　　　　　　　　<div class="transP_box1">
+    　　　　　　　　　　    <p>【透ける枠付き文字列１】</ｐ>
+    　　　　　　　　　　</div>
+    　　　　　　　　　　<div class="transP_box2">
+    　　　　　　　　　　    <p>【透ける枠付き文字列２】</ｐ>
+    　　　　　　　　　　</div>
+            </div>
+<!--        </div> -->
+
+    <h3>　■　２つの要素を重ねる。【position: relative(absolute);】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/13#/37" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/13#/37</a>】<br>
+    　　　　　<strong>　※　HTML中の各要素は、表示上重なる事はない。<br>
+    　　　　　　　　しかしながらその表示位置を【position】（CSS）にて指定すると、表示位置を指定出来表示を重ねる事が出来る！<br>
+    　　　　　　　　1) <font color="red">position: relative</font>;　・・・この指定を入れた親要素の左上が原点と成る（指定無しは、画面左上が原点）。<br>
+    　　　　　　　　2) <font color="red">position: absolute</font>;　・・・親要素の原点からの絶対位置関係、そこからのピクセル位置で指定する。</strong><br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="<strong><font color="blue">parent-pkg</font></strong>"&gt;<br>
+    　　　　　　　　　　　　&lt;img class="<strong><font color="blue">child-img</font></strong>" src="https://prog-8.com/images/html/advanced/html.png"&gt;<br>
+    　　　　　　　　　　　　&lt;p   class="<strong><font color="blue">child-text</font></strong>"&gt;HTML & CSS&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong><font color="blue">.parent-pkg</font></strong> {<br>
+    　　　　　　　　　　　　<strong><font color="red">position: relative;</font>　・・・【親・原点指定】</strong><br>
+    　　　　　　　　　　　　width: 300px;<br>
+    　　　　　　　　　　　　height: 300px;<br>
+    　　　　　　　　　　　　text-align: center;<br>
+    　　　　　　　　　　　　border-style: dashed;<br>
+    　　　　　　　　　　　　background-color: yellowgreen;<br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　<strong><font color="blue">.child-img</font></strong> {<br>
+    　　　　　　　　　　　　<strong><font color="red">position: absolute</font>;　・・・【子・原点からの距離指定明示】<br>
+    　　　　　　　　　　　　<font color="red">top: 50px;<br>
+    　　　　　　　　　　　　left: 50px;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　<strong><font color="blue">.child-text</font></strong> {<br>
+    　　　　　　　　　　　　<strong><font color="red">position: absolute;</font>　・・・【子・原点からの距離指定明示】<br>
+    　　　　　　　　　　　　<font color="red">top: 143px;<br>
+    　　　　　　　　　　　　left: 100px;</font></strong><br>
+    　　　　　　　　　　}<br>
+            
+    　　　　【実行結果・・・】<br>
+                <div class="parent-pkg">
+                    <img class="child-img" src="https://prog-8.com/images/html/advanced/html.png">
+                    <p class="child-text">HTML & CSS</p>
+                </div>
+
+<style type="text/css">
+    .parent-pkg {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        border-style: dashed;
+        background-color: yellowgreen;
+        margin-bottom: 50px;
+    }
+    .child-img {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+    .child-text {
+        position: absolute;
+        top: 143px;
+        width: 100%;
+/*    left: 100px； */
+    }
+</style>
+
+
+/***************************************************/<br>
+/***************************************************/
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2 id="section-button">※　ボタン要素（表示・フォーカス・クリック）制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->
+
+    <h3>　■　オンフォーカスの時に色を変える。【セレクタ :hover】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/6#/15" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/6#/15</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+    　　　　　　　　　　　　&lt;a href="#" class="btn btn_ref">フォーカス時色変更！a&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.btn {<br>
+    　　　　　　　　　　　　padding: 8px 24px;<br>
+    　　　　　　　　　　　　opacity: 0.8;<br>
+    　　　　　　　　　　　　background-color: #239b76;<br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　<strong>.btn<font color="red">:hover</font> {<br>
+    　　　　　　　　　　　　margin: 20px 0;<br>
+    　　　　　　　　　　　　background-color: blueviolet;<br>
+    　　　　　　　　　　}</strong><br>
+    　　　　　　　　　　.btn_ref {<br>
+    　　　　　　　　　　　　color: blue;<br> 
+    　　　　　　　　　　}<br>
+
+    　　　　【実行結果・・・】
+    　　　　　　　　<div class="btn-wrapper">
+    　　　　　　　　　　<a href="#" class="btn btn_ref">フォーカス時色変更！</a>
+    　　　　　　　　</div><br>
+
+    <h3>　■　オンフォーカスの時に表示に変化を加える。【transition】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/10#/28" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/10#/28</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="div_tran"&gt;<br>
+    　　　　　　　　　　　　&lt;p&gt;フォーカス時色変更！&lt;/p&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.div_tran {<br>
+    　　　　　　　　　　　　<strong><font color="red">transition: all 1s;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　.div-tran<strong><font color="red">:hover</font></strong> {<br>
+    　　　　　　　　　　　　background-color: blueviolet;<br>
+    　　　　　　　　　　}</strong><br>
+
+    　　　　【実行結果・・・】<br>
+    　　　　　　　　<div class="div_tran">
+    　　　　　　　　　　<p>フォーカス時、背景色「TRANSITION」にて変更！</p>
+    　　　　　　　　</div><br>
+
+    <h3>　■　ボックス形状（ボタン）のボーダーの角を丸める。【border-radius: 10px】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/6#/16" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/6#/16</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+    　　　　　　　　　　　　&lt;a href="#" class="btn btn_ref"&gt;フォーカス時色変更！&lt;/a&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong>.btn {<br>
+    　　　　　　　　　　　　padding: 8px 24px;<br>
+    　　　　　　　　　　　　opacity: 0.8;<br>
+    　　　　　　　　　　　　background-color: #239b76;<br>
+    　　　　　　　　　　　　<font color="red">border-radius: 10px;</font><br>
+    　　　　　　　　　　}</strong><br>
+
+    　　　　【実行結果・・・】
+    　　　　　　　　<div class="btn-wrapper">
+    　　　　　　　　　　<a href="#" class="btn btn_ref">ボタン角の丸みは如何？</a>
+    　　　　　　　　</div><br>
+
+    <h3>　■　ボタン（ボックス形状）の表示を立体感を出す。【box-shadow: ??px ??px color;】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/15#/42" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/15#/42</a>】<br>
+    　　　　　<strong>　※　ボタン要素の外側に「影」を表示する。<br></strong>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+    　　　　　　　　　　　　&lt;span class="sdw-btn btn_ref"&gt;影付き立体ボタン&lt;/span&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong>.sdw-btn {<br>
+    　　　　　　　　　　　　padding: 8px 24px;<br>
+    　　　　　　　　　　　　background-color: #239b76;<br>
+    　　　　　　　　　　　　opacity: 0.7;<br>
+    　　　　　　　　　　　　border-radius: 10px;<br>
+    　　　　　　　　　　　　<font color="red">box-shadow: 10px 10px #000;</font><br>
+    　　　　　　　　　　}</strong><br>
+    　　　　　　　　　　.sdw-btn:hover {<br>
+    　　　　　　　　　　　　opacity: 1;<br>
+    　　　　　　　　　　　　<strong><font color="red">box-shadow: -10px -10px gray;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　.sdw-btn:active {<br>
+    　　　　　　　　　　　　opacity: 1;<br>
+    　　　　　　　　　　　　<strong><font color="red">box-shadow: none;</font>　・・・クリック時に影を消す場合「none」</strong><br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　<div class="btn-wrapper">
+    　　　　　　　　　　<span class="sdw-btn">影付き立体ボタン</span>
+    　　　　　　　　</div><br>
+
+<style type="text/css">
+    .sdw-btn {
+        padding: 8px 24px;
+        background-color: #239b76;
+        opacity: 0.7;
+        border-radius: 10px;
+    box-shadow: 10px 10px #000;
+    }
+    .sdw-btn:hover {
+        opacity: 1;
+/*    box-shadow: -10px -10px gray; */
+        cursor: pointer;
+    }
+    .clk-btn {
+        padding: 8px 24px;
+        background-color: #239b76;
+        opacity: 0.7;
+        border-radius: 10px;
+        box-shadow: 10px 10px #000;
+    }
+    .clk-btn:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+    .clk-btn:active {
+        opacity: 1;
+/*    box-shadow: -10px -10px gray; */
+        background-color: red;
+        box-shadow: none;
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+</style>
+
+    <h3>　■　ボタンクリックを認識するには・・・【セレクタ:active】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/16#/45" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/16#/45</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+    　　　　　　　　　　　　&lt;span class="clk-btn btn_ref"&gt;影付き立体ボタン&lt;/span&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong><font color="red">.clk-btn:active</font></strong> {<br>
+    　　　　　　　　　　　　opacity: 1;<br>
+    　　　　　　　　　　　　background-color: red;<br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　<div class="btn-wrapper">
+    　　　　　　　　　　<span class="clk-btn">クリック時反応有りボタン</span>
+    　　　　　　　　</div><br>
+
+    <h3>　■　更に・・・ボタンクリック時に、ボタン表示を移動して凹むように見せるには・・・【position: relative;の拡大利用】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/16#/47" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/16#/47</a>】<br>
+    　　　　　<strong>　※　ボタン要素の表示位置を動かし、凹む様に見せる。<br>
+    　　　　　　　　<font color="red">position:relative;</font>と一緒に、<font color="red">TOP・LEFT</font>の距離を指定すると、現在位置からその分移動して表示される。</strong><br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+    　　　　　　　　　　　　&lt;span class="clk-btn btn_ref"&gt;影付き立体ボタン&lt;/span&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.clk-btn:active {<br>
+    　　　　　　　　　　　　opacity: 1;<br>
+    　　　　　　　　　　　　box-shadow: none;<br>
+    　　　　　　　　　　　　<strong><font color="red">position: relative;<br>
+    　　　　　　　　　　　　top: 10px;<br>
+    　　　　　　　　　　　　left: 10px;</font></strong><br>
+    　　　　　　　　　　}<br>
+    　　　　【実行結果・・・】
+    　　　　　　　　<div class="btn-wrapper">
+    　　　　　　　　　　<span class="clk-btn">クリック時反応有りボタン</span>
+    　　　　　　　　</div><br>
+
+
+/***************************************************/<br>
+/***************************************************/
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2 id="section-mouse">※　マウスカーソル要素（表示）制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                 
+<h3>　■　マウスカーソルの形状を指定する。【cursor: text/pointer/default;】<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/2/15#/43" target="_blank" rel="noopener noreferrer" >https://prog-8.com/html/study/2/15#/43</a>】<br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　　　&lt;div class="btn-wrapper"&gt;<br>
+　　　　　　　　　　　　&lt;span class="sdw-btnT btn_ref"&gt;cursor：TEXT&lt;/span&gt;<br>
+　　　　　　　　　　　　&lt;span class="sdw-btnP btn_ref"&gt;cursor：POINTER&lt;/span&gt;<br>
+　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　.sdw-btnT {<br>
+　　　　　　　　　　　　<strong><font color="red">cursor: default;</font></strong><br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.sdw-btnT:hover {<br>
+　　　　　　　　　　　　<strong><font color="red">cursor: text;</font></strong><br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.sdw-btnP {<br>
+　　　　　　　　　　　　<strong><font color="red">cursor: default;</font></strong><br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.sdw-btnT:hover {<br>
+　　　　　　　　　　　　<strong><font color="red">cursor: pointer;</font></strong><br>
+　　　　　　　　　　}<br>
+    
+　　　　【実行結果・・・】
+　　　　　　　　<div class="btn-wrapper">
+　　　　　　　　　　<span class="sdw-btnT">cursor：TEXT</span>
+　　　　　　　　　　<span class="sdw-btnP">cursor：POINTER</span>
+　　　　　　　　</div><br>
+
+<style type="text/css">
+    .sdw-btnT {
+        padding: 8px 24px;
+        background-color: #239b76;
+        opacity: 0.7;
+        border-radius: 10px;
+        box-shadow: 10px 10px #000;
+        cursor: default;
+    }
+    .sdw-btnT:hover {
+        opacity: 1;
+        box-shadow: -10px -10px gray;
+        cursor: text;
+    }
+    .sdw-btnP {
+        padding: 8px 24px;
+        background-color: #239b76;
+        opacity: 0.7;
+        border-radius: 10px;
+        box-shadow: 10px 10px #000;
+        cursor: default;
+    }
+    .sdw-btnP:hover {
+        opacity: 1;
+        box-shadow: -10px -10px gray;
+        cursor: pointer;
+    }
+    .btn-wrapper {
+        margin-bottom: 50px;
+    }
+</style>
+    
+
+/***************************************************/<br>
+/***************************************************/
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2 id="section-individualDSP">※　個別要素表示制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->
+
+    <h3>　■　相対的な（親に対する）大きさを指定する。【width: ??%】<br></h3>
+    　　　　【参照：<a href="https://prog-8.com/html/study/2/12#/35" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/2/12#/35</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;div class="lsn-parent"&gt;<br>
+    　　　　　　　　　　　　&lt;div class="lsn-child"&gt;あ&lt;/div&gt;<br>
+    　　　　　　　　　　　　&lt;div class="lsn-child"&gt;い&lt;/div&gt;<br>
+    　　　　　　　　　　&lt;/div&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　.lsn-parent {<br>
+    　　　　　　　　　　　　padding: 25px;<br>
+    　　　　　　　　　　　　width: 250px;<br>
+    　　　　　　　　　　　　height: 150px;<br>
+    　　　　　　　　　　}<br>
+    　　　　　　　　　　<strong>.lsn-child {<br>
+    　　　　　　　　　　　　float: left;<br>
+    　　　　　　　　　　　　<font color="red">width: 48%;</font>　・・・親の要素のサイズに対し、48%のサイズを取る。<br>
+    　　　　　　　　　　　　margin: 12px 0;<br>
+    　　　　　　　　　　　　margin-left: 1px;<br>
+    　　　　　　　　　　}</strong><br>
+        
+    　　　　【実行結果・・・】
+                    <div class="lsn-parent">
+                        <div class="lsn-child">
+                            <p>あ</p>
+                        </div>
+                        <div class="lsn-child">
+                            <p>い</p>
+                        </div>
+                    </div>
+
+<style type="text/css">
+.lsn-parent {
+    width: 250px;
+    height: 50px;
+    border-style: solid;
+    background-color: red;
+    margin-bottom: 50px;
+}
+.lsn-child {
+    float: left;
+    width: 48%;
+    margin: 12px 0;
+    margin-left: 1px;
+    border-style: solid;
+    background-color: aqua;
+}
+</style>
+
+/***************************************************/<br>
+/***************************************************/
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+　　<h2 id="section-responsive">※　レスポンシブデザイン関連の制御！ </h2>
+<!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
+    <h3>　■　フレックスボックスの考察・・・【flexbox】<br></h3>
+    　　　　【参照：<a href="   https://prog-8.com/html/study/4/2#/2" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/2#/2</a>】<br>
+    　　　　　<strong>１）縦並びを横並びにするには・・・【<font color="red">display: flex;</font>】</strong><br>
+    　　　　　　　【参照：<a href="https://prog-8.com/html/study/4/2#/4" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/2#/4</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;ul class="flex-list1"&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-1"&gt;リスト－１&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-2"&gt;リスト－２&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-3"&gt;リスト－３&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-4"&gt;リスト－４&lt;/li&gt;<br>
+    　　　　　　　　　　&lt;/ul&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong>.flex-list1 {<br>
+    　　　　　　　　　　　　<font color="red">display: flex;</font><br>
+    　　　　　　　　　　}<br></strong>
+    　　　　【実行結果・・・】<br>
+            <div class="list-wrapping">
+                <ul class="flex-none">
+                    <li type="none" class="li-1">リスト－１</li>
+                    <li type="none" class="li-2">リスト－２</li>
+                    <li type="none" class="li-3">リスト－３</li>
+                    <li type="none" class="li-4">リスト－４</li>
+                </ul>
+                <p>これが・・・</p>
+                <ul class="flex-list1">
+                    <li type="none" class="li-1">リスト－１</li>
+                    <li type="none" class="li-2">リスト－２</li>
+                    <li type="none" class="li-3">リスト－３</li>
+                    <li type="none" class="li-4">リスト－４</li>
+                </ul>
+
+                <p>こうなる！</p><br>
+    　　　　　<strong>２）更に、親要素の幅に併せて「均等に配置する」には・・・個別要素に【<font color="red">flex: auto;</font>】を設定する。</strong></p>
+    　　　　　　　【参照：<a href="https://prog-8.com/html/study/4/4#/8" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/4#/8</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;ul class="flex-list2"&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-1"&gt;リスト－１&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-2"&gt;リスト－２&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-3"&gt;リスト－３&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li-4"&gt;リスト－４&lt;/li&gt;<br>
+    　　　　　　　　　　&lt;/ul&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong>.flex-list2 li {<br>
+    　　　　　　　　　　　　<font color="red">flex: auto;</font><br>
+    　　　　　　　　　　}<br></strong>
+                <ul class="flex-list2">
+                    <li type="none" class="li-1">リスト－１</li>
+                    <li type="none" class="li-2">リスト－２</li>
+                    <li type="none" class="li-3">リスト－３</li>
+                    <li type="none" class="li-4">リスト－４</li>
+                </ul>
+            </div>
+
+<style type="text/css">
+    .list-wrapping {
+        width: 1170px;
+        margin-bottom: 20px;
+    }
+    .flex-list1 {
+        display: flex;
+        text-align: center;
+    }
+    .flex-list2 {
+        display: flex;
+        text-align: center;
+    }
+    .flex-list2 li {
+        flex:auto;
+    }
+    .li-1 { background-color:cyan;        color: white; padding: 10px 60px; }
+    .li-2 { background-color:blue;        color: white; padding: 10px 60px; }
+    .li-3 { background-color:darkmagenta; color: white; padding: 10px 60px; }
+    .li-4 { background-color:crimson;     color: white; padding: 10px 60px; }
+</style>
+
+    　　　　　<strong>３）更に、親要素に含まれる「子要素のサイズに合わせて折り返し表示させる」には・・・親要素に【<font color="red">flex-wrap: wrap;</font>】を設定する。</strong></p>
+    　　　　　　　【参照：<a href="https://prog-8.com/html/study/4/4#/11" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/4#/11</a>】<br>
+    　　　　　《HTML記載例》<br>
+    　　　　　　　　　　&lt;ul class="flex-list3"&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li1"&gt;リスト－１&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li2"&gt;リスト－２&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li3"&gt;リスト－３&lt;/li&gt;<br>
+    　　　　　　　　　　　　&lt;li class="li4"&gt;リスト－４&lt;/li&gt;<br>
+    　　　　　　　　　　&lt;/ul&gt;<br>
+    　　　　　《CSS記載例》<br>
+    　　　　　　　　　　<strong>.flex-list3 {<br>
+    　　　　　　　　　　　　<font color="red">display: flex;</font><br>
+    　　　　　　　　　　　　<font color="red">flex-wrap: wrap;</font><br>
+    　　　　　　　　　　}<br></strong>
+    　　　　　　　　　　<strong>.flex-list3 li {<br>
+    　　　　　　　　　　　　<font color="red">flex: auto;</font>　・・・表示したい個別要素を、表示領域全体に広げて表示する。<br>
+    　　　　　　　　　　　　<font color="red">width: 50%;</font>　・・・折り返した際に表示したい個別要素「表示数」を、表示領域のパーセンテージで指定する。<br>
+    　　　　　　　　　　}<br>
+    　　　　　　※　５０%：２個表示　・・・　表示領域に対し１要素５０％の比率で表示、すなはち２個表示できる。<br>
+    　　　　　　　　２５%：４個表示　・・・　表示領域に対し１要素２５％の比率で表示、すなはち４個表示できる。<br><br>
+    　　　　　　※　注意！　各要素に【padding】を指定すると、出来ない！<br></strong>
+
+            <div class="list-wrapping">
+                <ul class="flex-list3">
+                    <li type="none" class="li1">リスト－１</li>
+                    <li type="none" class="li2">リスト－２</li>
+                    <li type="none" class="li3">リスト－３</li>
+                    <li type="none" class="li4">リスト－４</li>
+                </ul>
+            </div>
+
+<style type="text/css">
+/*    .list-wrapping1 {
+        width: 500px;
+        margin-bottom: 20px;
+    } */
+    .flex-list3 {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .flex-list3 li {
+/*        flex: auto; */
+        width: 50%;
+    }
+    .li1 { background-color:cyan;        color: yellow; }
+    .li2 { background-color:blue;        color: yellow; }
+    .li3 { background-color:darkmagenta; color: yellow; }
+    .li4 { background-color:crimson;     color: yellow; }
+</style>
+
+<!-- -->
+<!-- ********** For DEBUG!
+<div class="wrap">
+    <ul class="list-wrp">
+        <li class="ech-li">1</li>
+        <li class="ech-li">2</li>
+        <li class="ech-li">3</li>
+        <li class="ech-li">4</li>
+    </ul>
+</div>
+
+<style type="text/css">
+    .wrap {
+        width: 1000px;
+        margin-bottom: 20px;
+    }
+    .list-wrp {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .list-wrp li {
+        flex: auto;
+        width: 50%;
+    }
+</style>
+
+********** For DEBUG! -->
+<!-- ***** -->
+
+<h3>　■　メディアクエリの利用・・・【<strong><font color="red">@media(max-width: 1000px){・・・}</font></strong>】<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/4/5#/14" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/5#/14</a>】<br>
+　　　　　<strong>１）デバイスに於ける画面幅が「1000px」以下の時に適用される・・・【<font color="red">@media(max-width: 1000px){・・・}</font>】</strong><br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　　　&lt;ul class="resp-ul"&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li1"&gt;リスト－１&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li2"&gt;リスト－２&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li3"&gt;リスト－３&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li4"&gt;リスト－４&lt;/lt&gt;<br>
+　　　　　　　　　　&lt;/ul&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　<strong><font color="red">@media( max-width: 1000px ) {</font></strong><br>
+　　　　　　　　　　　　.resp-ul {<br>
+　　　　　　　　　　　　　　<font color="red">flex-wrap: wrap;</font><br>
+　　　　　　　　　　　　}<br>
+　　　　　　　　　　　　.flex-list li {<br>
+　　　　　　　　　　　　　　<font color="red">width: 50%;</font>　・・・折り返し表示したい個別要素「表示数」を、表示領域のパーセンテージで指定する。<br>
+　　　　　　　　　　　　}<br>
+　　　　　　　　　　}<br>
+　　　　【実行結果・・・】<strong>ブラウザを小さくしてみて！（幅を１０００ｐｘ以下にする）</strong>
+            <ul class="resp-ul">
+                <li type="none" class="li1">リスト－１</li>
+                <li type="none" class="li2">リスト－２</li>
+                <li type="none" class="li3">リスト－３</li>
+                <li type="none" class="li4">リスト－４</li>
+            </ul>
+
+<style type="text/css">
+    .resp-ul {
+        list-style: none;
+        margin: 0px;
+        padding: 10px 0px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .resp-ul li {
+        color: white;
+        height: 50px;
+        line-height: 50px;
+/*        padding: 10px 40px; */
+    }
+    .li1 {background-color: cyan;}
+    .li2 {background-color: blue;}
+    .li3 {background-color: darkmagenta;}
+    .li4 {background-color: crimson;}
+
+    @media( max-width: 1000px ) {
+        .resp-ul {
+            flex-wrap: wrap;
+        }
+        .resp-ul li {
+            width: 50%;
+        }
+    }
+    @media( max-width: 670px ) {
+        .resp-ul {
+            flex-direction: column;
+        }
+    }
+
+</style>
+
+<br>
+　　　　　<strong>２）各要素を意図して縦に並べる・・・【<font color="red">flex-direction: column</font>】</strong><br>
+　　　　　　　【参照：<a href="https://prog-8.com/html/study/4/6#/16" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/6#/16</a>】<br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　　　&lt;ul class="column-ul"&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li1"&gt;リスト－１&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li2"&gt;リスト－２&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li3"&gt;リスト－３&lt;/lt&gt;<br>
+　　　　　　　　　　　　&lt;li type="none" class="li4"&gt;リスト－４&lt;/lt&gt;<br>
+　　　　　　　　　　&lt;/ul&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　.column-ul {<br>
+　　　　　　　　　<strong><font color="red">flex-direction: column;</font></strong><br>
+　　　　　　　}<br>
+　　　　【実行結果・・・】
+            <ul class="resp-ul">
+                <li type="none" class="li1">リスト－１</li>
+                <li type="none" class="li2">リスト－２</li>
+                <li type="none" class="li3">リスト－３</li>
+                <li type="none" class="li4">リスト－４</li>
+            </ul>
+            <p>これが・・・</p>
+            <ul class="column-ul">
+                <li type="none" class="li1">リスト－１</li>
+                <li type="none" class="li2">リスト－２</li>
+                <li type="none" class="li3">リスト－３</li>
+                <li type="none" class="li4">リスト－４</li>
+            </ul>
+            <p>こうなる！</p><br>
+
+<style type="text/css">
+    .column-ul {
+        flex-direction: column;
+        list-style: none;
+        margin: 0px;
+        padding: 10px 0px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column-ul li {
+        padding: 10px 40px;
+        margin: 0 auto;
+    }
+</style>            
+<strong><p>先の画面サイズ１０００ｐｘにて変更の下記リスト、６７０ｐｘ以下で縦並びに！<br>
+           ブラウザのサイズを小さくしてみて！<br>
+           　１．１０００ｐｘ以下で、２列表示。<br>
+           　２．　６７０ｐｘ以下で、縦一列表示。</strong></p>
+<ul class="resp-ul">
+    <li type="none" class="li1">リスト－１</li>
+    <li type="none" class="li2">リスト－２</li>
+    <li type="none" class="li3">リスト－３</li>
+    <li type="none" class="li4">リスト－４</li>
+</ul>
+
+
+
+
+            <br><br><br>
+    </body>
+</html>
