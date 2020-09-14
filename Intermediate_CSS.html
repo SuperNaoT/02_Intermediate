@@ -719,9 +719,21 @@
 　　　　　　　HTMLファイル内、<head>内に【<font color="red">meta name="viewport"</font>】を設定する。<br>
 　　　　　《HTML記載例》<br>
 　　　　　　　　&lt;head&gt;<br>
-　　　　　　　　　　<font color="red">&lt;meta name="viewport"<br>
-　　　　　　　　　　&lt;content="width=devise-width, initial-scale=1.0"&gt;</font><br>
+　　　　　　　　　　<font color="red">&lt;meta name="viewport" content="width=devise-width, initial-scale=1.0"&gt;</font><br>
 　　　　　　　　&lt;/head&gt;</strong><br>
+
+<h3>　■　重要）　レスポンシブデザインのCSSは、分ける方が理想敵！【<font color="red">responsive.css</font>】<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/3/6#/14" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/6#/14</a>】<br>
+　　　　　<strong>※　通常イメージでのLPを作り終えた後に、レスポンシブデザインに対応させる事が多いが、<br>
+　　　　　　　その場合、CSSファイルを「stylesheet.css」と分ける事が理想的【<font color="red">responsive.css</font>】。<br>
+　　　　　　　重要）　レスポンシヴデザイン用のCSSの読み込みは、<font color="red">必ず「viewport」の後</font>に行う。
+　　　　　《HTML記載例》<br>
+　　　　　　　　&lt;head&gt;<br>
+　　　　　　　　　　&lt;meta name="viewport" content="width=devise-width, initial-scale=1.0"&gt;<br>
+　　　　　　　　　　<font color="red">&lt;link ref="stylesheet" href="responsive.css"&gt;</font><br>
+　　　　　　　　&lt;/head&gt;</strong><br>
+
+
     <h3>　■　フレックスボックスの考察・・・【flexbox】<br></h3>
     　　　　【参照：<a href="   https://prog-8.com/html/study/4/2#/2" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/4/2#/2</a>】<br>
     　　　　　<strong>１）縦並びを横並びにするには・・・【<font color="red">display: flex;</font>】</strong><br>
