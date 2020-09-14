@@ -574,6 +574,140 @@
 }
 </style>
 
+
+<h3>　■　相対的な（親に対する）大きさ指定の際での、レイアウト崩れを避けるには・・・【<font color="red">box-sizing: border-box;</font>】<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/3/4#/8" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/4#/8</a>】<br>
+　　　　　<strong>　※　相対的な大きさ指定を「％」で行った場合、そのサイズがきっちりしたサイズであると、<br>
+　　　　　　　　「padding」等余白を指定すると「１００％を超え」てしまい、レイアウトが崩れる。<br>
+　　　　　　　　「<font color="red">box-sizing: border-box;</font>」を用いる事にて、レイアウト崩れを避ける事が出来る。<br></strong>
+　　　　　《HTML記載例》<br>
+　　　　　　　　　　&lt;div class="container"&gt;<br>
+　　　　　　　　　　　　&lt;div class="item"&gt;<br>
+　　　　　　　　　　　　　　&lt;div class="item-box green"&gt;&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;div class="item"&gt;<br>
+　　　　　　　　　　　　　　&lt;div class="item-box yellow"&gt;&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;div class="item"&gt;<br>
+　　　　　　　　　　　　　　&lt;div class="item-box red"&gt;&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;div class="item"&gt;<br>
+　　　　　　　　　　　　　　&lt;div class="item-box blue"&gt;&lt;/div&gt;<br>
+　　　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　　　　　　&lt;/div&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　.container { margin: 20px; }<br>
+　　　　　　　　　　.item {<br>
+　　　　　　　　　　　　width: 25%;<br>
+　　　　　　　　　　　　float: left;<br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.item-box {<br>
+　　　　　　　　　　　　height: 100px;<br>
+　　　　　　　　　　　　margin-bottom: 20px;<br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.green  { background-color: #11D8B3; }<br>
+　　　　　　　　　　.yellow { background-color: #FFD466; }<br>
+　　　　　　　　　　.red    { background-color: #ED456D; }<br>
+　　　　　　　　　　.blue   { background-color: #3D7DD8; }  <br>
+　　　　　　　　　　/* タブレット向けレイアウト */<br>
+　　　　　　　　　　@media (max-width: 1000px) {<br>
+　　　　　　　　　　　　.item { width: 50%; }<br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　/* スマートフォン向けレイアウト */<br>
+　　　　　　　　　　@media (max-width: 670px) {<br>
+　　　　　　　　　　　　.item { width: 100%; }<br>
+　　　　　　　　　　}<br>
+    
+　　　　【実行結果・・・】
+                <div class="container">
+                    <div class="item">
+                        <div class="item-box green"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-box yellow"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-box red"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item-box blue"></div>
+                    </div>
+                </div>
+                <p>これに「padding」を付けると、レイアウトが崩れる。</p>
+                <div class="container">
+                    <div class="itemP">
+                        <div class="item-box green"></div>
+                    </div>
+                    <div class="itemP">
+                        <div class="item-box yellow"></div>
+                    </div>
+                    <div class="itemP">
+                        <div class="item-box red"></div>
+                    </div>
+                    <div class="itemP">
+                        <div class="item-box blue"></div>
+                    </div>
+                </div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <p><strong>レイアウト崩れを避ける為に「<font color="red">box-sizing: border-box;</font>」を付ける。</p>
+                <p>全ての要素にこのスタイルを効かせたいので、セレクター指定を「<font color="red">＊</font>」にする。</p>
+　　　　　《CSS記載例》<br>
+　　　　　　　　<font color="red">* { box-sizing: border-box; }</font></strong><br>
+　　　　　　　　【参照：<a href="https://prog-8.com/html/study/3/4#/10" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/4#/10</a>】<br>
+<div class="container">
+    <div class="itemPB">
+        <div class="item-box green"></div>
+    </div>
+    <div class="itemPB">
+        <div class="item-box yellow"></div>
+    </div>
+    <div class="itemPB">
+        <div class="item-box red"></div>
+    </div>
+    <div class="itemPB">
+        <div class="item-box blue"></div>
+    </div>
+</div>
+
+<style type="text/css">
+.container  { margin: 10px; }
+
+.item {
+  width: 25%;
+  float: left;
+}
+.itemP {
+  width: 25%;
+  float: left;
+  padding:15px;
+}
+.itemPB {
+  width: 25%;
+  float: left;
+  padding:15px;
+  box-sizing: border-box;
+}
+
+.item-box {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.green  { background-color: #11D8B3; }
+.yellow { background-color: #FFD466; }
+.red    { background-color: #ED456D; }
+.blue   { background-color: #3D7DD8; }
+
+/* タブレット向けレイアウト */
+@media (max-width: 1000px) {
+  .item { width: 50%; }
+}
+
+/* スマートフォン向けレイアウト */
+@media (max-width: 670px) {
+  .item { width: 100%; }
+}
+</style>
+
 /***************************************************/<br>
 /***************************************************/
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
