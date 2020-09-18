@@ -17,7 +17,7 @@
         <a href="#section-image">■　画像表示関連</a><br>
         <a href="#section-button">■　ボタン表示関連</a><br>
         <a href="#section-mouse">■　マウス表示関連</a><br>
-        <a href="#section-individualDSP">■　個別要素、画面サイズ比率表示関連</a><br>
+        <a href="#section-individualDSP">■　個別要素、画面サイズ比率表示関連（画面崩れ防止策）</a><br>
         <a href="#section-responsive">■　レスポンシブデザイン関連</a><br>
     </div>
 <style type="text/css">
@@ -523,7 +523,7 @@
 /***************************************************/<br>
 /***************************************************/
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->                        
-　　<h2 id="section-individualDSP">※　個別要素表示制御！ </h2>
+　　<h2 id="section-individualDSP">※　個別要素表示制御（画面崩れ防止策）！ </h2>
 <!-- ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■　-->
 
     <h3>　■　相対的な（親に対する）大きさを指定する。【width: ??%】<br></h3>
@@ -705,6 +705,107 @@
 /* スマートフォン向けレイアウト */
 @media (max-width: 670px) {
   .item { width: 100%; }
+}
+</style>
+
+<h3>　■　重要）　全ての子要素に【<font color="red">float: ＊;</font>】属性を指定すると、親要素の高さは【０】に成ってしまう！<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/3/7#/17" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/7#/17</a>】<br>
+　　　　　<strong>※　アイコン等を横に並べたい場合、「container」に対し個別「icon」には【<font color="red">float: ＊;</font>】属性を指定する事が多い。<br>
+　　　　　　　この場合、「container」に高さが明示されて居れば良いが、レスポンシブデザインで考える場合、高さを明示しない。<br>
+　　　　　　　親要素「container」内の子要素「icon」全てが「float: left;」に成ると、親要素「container」は高さが【０】に成ってしまう。</strong><br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　&lt;div class="h-container"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/html.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/php.png"&gt;<br>
+　　　　　　　　&lt;/div&gt;<br>
+　　　　　　　　&lt;div class="nh-container"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/html.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/php.png"&gt;<br>
+　　　　　　　　&lt;/div&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　<strong>.h-container {<br>
+　　　　　　　　　　　　background-color: red;<br>
+　　　　　　　　　　　　<font color="red">height: 200px;</font>　・・・高さ明示指定有り！<br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.nh-container {　・・・高さ明示指定なし！<br>
+　　　　　　　　　　　　background-color: red;<br>
+　　　　　　　　　　}<br>
+　　　　　　　　　　.htchk {<br>
+　　　　　　　　　　　　float: left;<br>
+　　　　　　　　　　｝</strong><br>
+　　　　【実行結果・・・】<br>
+<div class="h-container">
+    <img class="htchk" src="../03_Self-Review/Images/html.png">
+    <img class="htchk" src="../03_Self-Review/Images/php.png">
+</div>
+<p>これが・・・</p>
+<div class="nh-container">
+    <img class="htchk" src="../03_Self-Review/Images/html.png">
+    <img class="htchk" src="../03_Self-Review/Images/php.png">
+</div>
+<p>こうなる！</p>
+<br><br><br><br><br><br><br><br><br>
+<p><strong>赤色表示されている親要素の高さが「０」に成り、赤色背景が無い！<br>
+すなはち、画面表示が壊れる！</strong></p><br>
+　　　　　<strong>※　対策として「float: left;」を定義して居る一番下子要素の下に<br>
+　　　　　　【<font color="red">&lt;div class="clear"&gt;&lt/div&gt;</font>】を指定し、<br>
+　　　　　　　更に「stylesheet」に「<font color="red">.clear { clear: left; }</font>」を指定する事にて「float」を解除する。<br>
+　　　　　　【参照：<a href="https://prog-8.com/html/study/3/7#/18" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/7#/18</a>】</strong><br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　<strong>&lt;div class="nh-container"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/html.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/php.png"&gt;<br>
+　　　　　　　　　　<font color="red">&lt;div class="clear"&gt;&lt;/div&gt;</font></strong><br>
+　　　　　　　　&lt;/div&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　<strong><font color="red">.clear {<br>
+　　　　　　　　　　　　clear: left;<br>
+　　　　　　　　　　}</font></strong><br>
+　　　　【実行結果・・・】<br>
+<div class="nh-container">
+    <img class="htchk" src="../03_Self-Review/Images/html.png">
+    <img class="htchk" src="../03_Self-Review/Images/php.png">
+    <div class="clear"></div>
+</div>
+<br><br>
+
+<h3>　■　最大画面幅が非常に大きいデバイスでの表示対策では、画面理想最大サイズを指定しておく。【<font color="red">max-width: 1170px;</font>】<br></h3>
+　　　　【参照：<a href="https://prog-8.com/html/study/3/11#/24" target="_blank" rel="noopener noreferrer">https://prog-8.com/html/study/3/11#/24</a>】<br>
+　　　　　《HTML記載例》<br>
+　　　　　　　　&lt;div class="h-container"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/html.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/jQuery.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/php.png"&gt;<br>
+　　　　　　　　　　&lt;img class="htchk" src="images/ruby.png"&gt;<br>
+　　　　　　　　&lt;/div&gt;<br>
+　　　　　《CSS記載例》<br>
+　　　　　　　　　　<strong>.h-container {<br>
+　　　　　　　　　　　　background-color: red;<br>
+　　　　　　　　　　　　<font color="red">max-width: 1170px;</font>　・・・表示に際し、理想とする画面最大サイズを指定。<br>
+　　　　　　　　　　}<br>
+　　　　【実行結果・・・】<br>
+<div class="nh-container">
+    <img class="htchk" src="../03_Self-Review/Images/html.png">
+    <img class="htchk" src="../03_Self-Review/Images/jQuery.png">
+    <img class="htchk" src="../03_Self-Review/Images/php.png">
+    <img class="htchk" src="../03_Self-Review/Images/ruby.png">
+    <div class="clear"></div>
+</div>
+
+
+<style type="text/css">
+.h-container {
+    height: 200px;
+    background-color: red;
+}
+.nh-container {
+    background-color: red;
+}
+.htchk {
+    float: left;
+}
+.clear {
+    clear: left;
 }
 </style>
 
